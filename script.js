@@ -23,6 +23,6 @@ function rot13(encodedStr){
    return decoderArr;
 }
 
-console.log(rot13('#MNZD'));
+console.log(rot13("SERR YBIR? NPPVBWBO"));
 
 module.exports = rot13;
