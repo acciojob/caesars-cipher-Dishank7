@@ -10,17 +10,17 @@ const lookup = {
     'Y': 'L','Z': 'M', '?': '?', ',': ','
   };
 
-function rot13(encodedStr){
-   // console.log(encodedStr[0]);
-   let decoderArr = [];
-   for(let i = 0; i < encodedStr.length; i++){
-       if(lookup[encodedStr[i]] == undefined){
-        decoderArr.push(encodedStr[i]);
-       }else{
-        decoderArr.push(lookup[encodedStr[i]]);
-       }
-   }
-   return decoderArr;
+function rot13(str) {
+var result = "";
+for (var i = 0; i < str.length; i++) {
+var c = str.charCodeAt(i);
+if (c >= 65 && c <= 90) { // only operate on uppercase letters
+c = ((c - 65 + 13) % 26) + 65; // shift by 13 places
+}
+result += String.fromCharCode(c);
+}
+return result;
+
 }
 
 console.log(rot13("SERR YBIR? NPPVBWBO"));
