@@ -10,7 +10,7 @@ const lookup = {
     'Y': 'L','Z': 'M', '?': '?', ',': ','
   };
 
-function rot14(encodedStr){
+function rot13(encodedStr){
      // console.log(encodedStr[0]);
      let decoderStr = "";
      for(let i = 0; i < encodedStr.length; i++){
@@ -23,6 +23,6 @@ function rot14(encodedStr){
      return decoderStr;
   }
 
- console.log(rot14("SERR YBIR? NPPVBWBO")); 
+ console.log(rot13("SERR YBIR? NPPVBWBO")); 
 
 module.exports = rot13;
