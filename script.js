@@ -10,19 +10,19 @@ const lookup = {
     'Y': 'L','Z': 'M', '?': '?', ',': ','
   };
 
-function rot13(str) {
-var result = "";
-for (var i = 0; i < str.length; i++) {
-var c = str.charCodeAt(i);
-if (c >= 65 && c <= 90) { // only operate on uppercase letters
-c = ((c - 65 + 13) % 26) + 65; // shift by 13 places
-}
-result += String.fromCharCode(c);
-}
-return result;
+function rot14(encodedStr){
+     // console.log(encodedStr[0]);
+     let decoderStr = "";
+     for(let i = 0; i < encodedStr.length; i++){
+         if(lookup[encodedStr[i]] == undefined){
+          decoderStr += encodedStr[i];
+         }else{
+         decoderStr += lookup[encodedStr[i]];
+         }
+     }
+     return decoderStr;
+  }
 
-}
-
-console.log(rot13("SERR YBIR? NPPVBWBO"));
+ console.log(rot14("SERR YBIR? NPPVBWBO")); 
 
 module.exports = rot13;
